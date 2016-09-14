@@ -8,16 +8,15 @@ class String
 end
 
 s = TCPSocket.new ARGV[0], 13855
+s.puts '.'
 
 file = open('blinking.dat', 'w');
 
 while line = s.gets
-    list = line.split(',')
+    list = line.split("\n")
     list.each do |element|
-        if (element.numeric?)
-            puts element
-            file.puts element
-        end
+        puts element
+        file.puts element
     end
 end
 s.close
