@@ -9,7 +9,7 @@ end
 
 s = TCPSocket.new ARGV[0], 13855
 
-file = open('blinking.mat', 'w');
+file = open('blinking.dat', 'w');
 
 while line = s.gets
     list = line.split(',')
